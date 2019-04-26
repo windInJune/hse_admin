@@ -460,6 +460,7 @@ export default {
       });
     },
     schoolChange() {
+      this.currentPage = 1;
       this.GradeValue = "";
       this.classValue = "";
       Vue.http.headers.common["userToken"] = getCookie("userToken");
@@ -476,6 +477,7 @@ export default {
       this.loadData();
     },
     GradeChange() {
+      this.currentPage = 1;
       console.log(this.schoolValue);
       Vue.http.headers.common["userToken"] = getCookie("userToken");
       this.$http
@@ -491,13 +493,15 @@ export default {
       this.loadData();
     },
     classChange() {
+      this.currentPage = 1;
       this.loadData();
     },
     statusChange() {
-      console.log(this.statusValue);
+      this.currentPage = 1;
       this.loadData();
     },
     searchSubmit() {
+      this.currentPage = 1;
       this.loadData();
     }
   },
